@@ -8,6 +8,9 @@ import com.example.myapplication.data.network.model.HistoricalEvent
 import com.example.myapplication.databinding.ItemHistoricalEventBinding
 import com.example.myapplication.framework.viewholders.HistoricalEventViewHolder
 
+/**
+ * Adaptador para mostrar una lista de eventos históricos en un RecyclerView.
+ */
 class HistoricalEventAdapter :
     ListAdapter<HistoricalEvent, HistoricalEventViewHolder>(HistoricalEventDiffCallback()) {
 
@@ -25,6 +28,9 @@ class HistoricalEventAdapter :
     }
 }
 
+/**
+ * Callback para calcular las diferencias entre dos listas de eventos históricos.
+ */
 class HistoricalEventDiffCallback : DiffUtil.ItemCallback<HistoricalEvent>() {
     override fun areItemsTheSame(oldItem: HistoricalEvent, newItem: HistoricalEvent): Boolean {
         return oldItem.objectId == newItem.objectId
